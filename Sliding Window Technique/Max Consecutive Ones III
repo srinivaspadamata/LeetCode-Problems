@@ -22,7 +22,7 @@ nums[i] is either 0 or 1.
 
 Code: Java
 
-```java
+```
 class Solution {
     public int longestOnes(int[] nums, int k) {
         int left = 0;
