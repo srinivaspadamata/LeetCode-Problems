@@ -1,0 +1,111 @@
+Given two 0-indexed integer arrays nums1 and nums2, return a list answer of size 2 where:
+answer[0] is a list of all distinct integers in nums1 which are not present in nums2.
+answer[1] is a list of all distinct integers in nums2 which are not present in nums1.
+Note that the integers in the lists may be returned in any order.
+
+Example 1:
+Input: nums1 = [1,2,3], nums2 = [2,4,6]
+Output: [[1,3],[4,6]]
+Explanation:
+For nums1, nums1[1] = 2 is present at index 0 of nums2, whereas nums1[0] = 1 and nums1[2] = 3 are not present in nums2. Therefore, answer[0] = [1,3].
+For nums2, nums2[0] = 2 is present at index 1 of nums1, whereas nums2[1] = 4 and nums2[2] = 6 are not present in nums2. Therefore, answer[1] = [4,6].
+
+Example 2:
+Input: nums1 = [1,2,3,3], nums2 = [1,1,2,2]
+Output: [[3],[]]
+Explanation:
+For nums1, nums1[2] and nums1[3] are not present in nums2. Since nums1[2] == nums1[3], their value is only included once and answer[0] = [3].
+Every integer in nums2 is present in nums1. Therefore, answer[1] = [].
+ 
+Constraints:
+1 <= nums1.length, nums2.length <= 1000
+-1000 <= nums1[i], nums2[i] <= 1000
+
+Code: Java
+
+class Solution {
+    public List<List<Integer>> findDifference(int[] nums1, int[] nums2) {
+        List<List<Integer>> result = new ArrayList<>();
+        HashSet<Integer> set1 = new HashSet<>();
+        HashSet<Integer> set2 = new HashSet<>();
+        for(int i=0;i<nums1.length;i++){
+            set1.add(nums1[i]);
+        }
+        for(int j=0;j<nums2.length;j++){
+            set2.add(nums2[j]);
+        }
+
+        HashSet<Integer> newSet1 = new HashSet<>(set1);
+        newSet1.removeAll(set2);
+
+        HashSet<Integer> newSet2 = new HashSet<>(set2);
+        newSet2.removeAll(set1);
+
+        result = Arrays.asList(new ArrayList<>(newSet1), new ArrayList<>(newSet2));
+        return result;
+    }
+}
+
+Brute Force:
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class Main {
+    public static void main(String[] args) {
+        int[] arr1 = {1, 2, 3, 4};
+        int[] arr2 = {3, 4, 5, 6};
+
+        List<List<Integer>> result = findDifferenceBruteForce(arr1, arr2);
+
+        System.out.println("Difference of Arrays:");
+        System.out.println("Unique to arr1: " + result.get(0));
+        System.out.println("Unique to arr2: " + result.get(1));
+    }
+
+    public static List<List<Integer>> findDifferenceBruteForce(int[] nums1, int[] nums2) {
+        List<Integer> uniqueToNums1 = new ArrayList<>();
+        List<Integer> uniqueToNums2 = new ArrayList<>();
+
+        // Brute force check for elements in nums1 not present in nums2
+        for (int i = 0; i < nums1.length; i++) {
+            boolean found = false;
+            for (int j = 0; j < nums2.length; j++) {
+                if (nums1[i] == nums2[j]) {
+                    found = true;
+                    break;
+                }
+            }
+            // If element is not found and not already in the list, add it
+            if (!found && !uniqueToNums1.contains(nums1[i])) {
+                uniqueToNums1.add(nums1[i]);
+            }
+        }
+
+        // Brute force check for elements in nums2 not present in nums1
+        for (int i = 0; i < nums2.length; i++) {
+            boolean found = false;
+            for (int j = 0; j < nums1.length; j++) {
+                if (nums2[i] == nums1[j]) {
+                    found = true;
+                    break;
+                }
+            }
+            // If element is not found and not already in the list, add it
+            if (!found && !uniqueToNums2.contains(nums2[i])) {
+                uniqueToNums2.add(nums2[i]);
+            }
+        }
+
+        // Combine both lists into the result
+        List<List<Integer>> result = new ArrayList<>();
+        result.add(uniqueToNums1);
+        result.add(uniqueToNums2);
+
+        return result;
+    }
+}
+
+
+
+
