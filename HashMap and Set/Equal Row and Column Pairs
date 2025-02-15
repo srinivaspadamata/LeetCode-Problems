@@ -1,0 +1,103 @@
+Given a 0-indexed n x n integer matrix grid, return the number of pairs (ri, cj) such that row ri and column cj are equal.
+A row and column pair is considered equal if they contain the same elements in the same order (i.e., an equal array).
+
+Example 1:
+Input: grid = [[3,2,1],[1,7,6],[2,7,7]]
+Output: 1
+Explanation: There is 1 equal row and column pair:
+- (Row 2, Column 1): [2,7,7]
+
+Example 2:
+Input: grid = [[3,1,2,2],[1,4,4,5],[2,4,2,2],[2,4,2,2]]
+Output: 3
+Explanation: There are 3 equal row and column pairs:
+- (Row 0, Column 0): [3,1,2,2]
+- (Row 2, Column 2): [2,4,2,2]
+- (Row 3, Column 2): [2,4,2,2]
+ 
+Constraints:
+n == grid.length == grid[i].length
+1 <= n <= 200
+1 <= grid[i][j] <= 105
+
+Code: Java
+
+Optimized Way:
+
+import java.util.HashMap;
+import java.util.Map;
+
+public class EqualRowColumnPairsOptimized {
+    public static void main(String[] args) {
+        int[][] grid = {
+            {3, 2, 1},
+            {2, 2, 2},
+            {1, 2, 3}
+        };
+
+        int result = countEqualRowColumnPairs(grid);
+        System.out.println("Number of equal row-column pairs: " + result);
+    }
+
+    public static int countEqualRowColumnPairs(int[][] grid) {
+        int n = grid.length;
+        Map<String, Integer> rowMap = new HashMap<>();
+
+        // Store row patterns
+        for (int[] row : grid) {
+            String pattern = arrayToString(row);
+            rowMap.put(pattern, rowMap.getOrDefault(pattern, 0) + 1);
+        }
+
+        int count = 0;
+
+        // Compare column patterns with row patterns
+        for (int j = 0; j < n; j++) {
+            int[] col = new int[n];
+            for (int i = 0; i < n; i++) {
+                col[i] = grid[i][j];
+            }
+
+            String colPattern = arrayToString(col);
+            count += rowMap.getOrDefault(colPattern, 0);
+        }
+
+        return count;
+    }
+
+    // Helper method to convert array to string
+    private static String arrayToString(int[] arr) {
+        StringBuilder sb = new StringBuilder();
+        for (int num : arr) {
+            sb.append(num).append(",");
+        }
+        return sb.toString();
+    }
+}
+
+Brute Force(Simple):
+
+class Solution {
+    public int equalPairs(int[][] grid) {
+        int[][] grid1 = new int[grid[0].length][grid.length];
+
+    		for(int row=0; row<grid.length; row++){
+    		    for(int column=0; column< grid[0].length; column++){
+    		        grid1[column][row] = grid[row][column];
+    		    }
+    		}
+    		int count = 0;
+    
+    		for(int i=0; i<grid.length; i++){
+    		    for(int j=0; j<grid1.length; j++){
+    		        if(Arrays.equals(grid[i], grid1[j])){
+    		            count = count + 1;
+    		        }
+    		    }
+    		}
+        return count;
+    }
+}
+
+
+
