@@ -23,6 +23,8 @@ Follow-up: Could you solve it in O(n log(k)) time and O(n) extra space?
 
 Code: Java
 
+Using Min Heap
+
 class Solution {
     public List<String> topKFrequent(String[] words, int k) {
         HashMap<String, Integer> wordMap = new HashMap<>();
@@ -42,6 +44,33 @@ class Solution {
             result.add(minHeap.poll().getKey());
         }
         Collections.reverse(result);
+        return result;
+    }
+}
+
+Using Max Heap
+
+import java.util.*;
+class Solution {
+    public List<String> topKFrequent(String[] words, int k) {
+        // Step 1: Count the frequency of each word
+        HashMap<String, Integer> wordMap = new HashMap<>();
+        for (String word : words) {
+            wordMap.put(word, wordMap.getOrDefault(word, 0) + 1);
+        }
+
+        // Step 2: Use a PriorityQueue (max-heap) to store words by frequency and lexicographical order
+        PriorityQueue<Map.Entry<String, Integer>> maxHeap = 
+            new PriorityQueue<>((a, b) -> a.getValue() == b.getValue() ? b.getKey().compareTo(a.getKey()) : b.getValue() - a.getValue());
+
+        // Step 3: Add all entries from the wordMap to the heap
+        maxHeap.addAll(wordMap.entrySet());
+
+        // Step 4: Collect the top K frequent words
+        List<String> result = new ArrayList<>();
+        for (int i = 0; i < k; i++) {
+            result.add(maxHeap.poll().getKey());
+        }
         return result;
     }
 }
