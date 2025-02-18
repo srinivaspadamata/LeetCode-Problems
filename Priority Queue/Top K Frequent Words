@@ -61,7 +61,7 @@ class Solution {
 
         // Step 2: Use a PriorityQueue (max-heap) to store words by frequency and lexicographical order
         PriorityQueue<Map.Entry<String, Integer>> maxHeap = 
-            new PriorityQueue<>((a, b) -> a.getValue() == b.getValue() ? b.getKey().compareTo(a.getKey()) : b.getValue() - a.getValue());
+            new PriorityQueue<>((a, b) -> a.getValue() == b.getValue() ? a.getKey().compareTo(b.getKey()) : b.getValue() - a.getValue());
 
         // Step 3: Add all entries from the wordMap to the heap
         maxHeap.addAll(wordMap.entrySet());
