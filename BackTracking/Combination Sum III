@@ -38,14 +38,14 @@ class Solution {
         backtrack(result, new ArrayList<>(), k, n, 1);
         return result;
     }
-    private void backtrack(List<List<Integer>> result, List<Integer> current, int k, int target, int index){
+    private void backtrack(List<List<Integer>> result, List<Integer> current, int k, int target, int start){
         if(current.size() == k && target == 0){
             result.add(new ArrayList<>(current));
         }
 
         if(current.size() >= k || target < 0) return;
 
-        for(int i = index; i <= 9; i++){
+        for(int i = start; i <= 9; i++){
             current.add(i);
             backtrack(result, current, k, target - i, i + 1);
             current.remove(current.size() - 1);
