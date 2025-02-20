@@ -19,7 +19,7 @@ Follow-up: Could you solve the problem in linear time and in O(1) space?
 
 Code: Java
 
-Optimized Code:
+Optimized Code (Boyer-Moore Voting Algorithm):
 
 class Solution {
     public int majorityElement(int[] nums) {
