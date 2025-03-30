@@ -47,3 +47,29 @@ class Solution {
     }
 }
 
+Optimized for Space:
+Time Complexity: O(LogN) -> When squaring digits, the sum typically results in a smaller number.
+Space Complexity: O(1) --> not used any data structure;
+If slow and fast meet, it is a cycle
+
+class Solution {
+    public boolean isHappy(int n) {
+        int slow = n, fast = n;
+        do{
+            slow = sumOfSquares(slow);
+            fast = sumOfSquares(sumOfSquares(fast));
+        }while(slow != fast);
+
+        return slow == 1;
+    }
+    private int sumOfSquares(int num){
+        int sum = 0;
+        while(num > 0){
+            int digit = num % 10;
+            sum = sum + digit*digit;
+            num = num / 10;
+        }
+        return sum;
+    }
+}
+
