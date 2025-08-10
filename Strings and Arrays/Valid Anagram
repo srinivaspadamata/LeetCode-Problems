@@ -37,3 +37,6 @@ class Solution {
         return true;
     }
 }
+
+Time Complexity: O(n)+O(n)+O(1)=O(n)
+Space Complexity: O(1) (constant extra space)
