@@ -50,3 +50,6 @@ class Solution {
         return result;
     }
 }
+
+Time Complexity: O(m × n), m = number of rows, n = number of columns
+Space Complexity: O(m × n) (for output) and O(1) auxiliary
