@@ -45,3 +45,6 @@ class Solution {
         return str.toString();
     }
 }
+
+Time Complexity → O(n)
+Space Complexity → O(n) (because of StringBuilder and ArrayList storing vowels)
