@@ -41,3 +41,15 @@ class Solution {
 	    return result.toString().trim();
     }
 }
+
+Time Complexity:
+Splitting: O(n)
+Reversing & appending: O(n)
+Final trim: O(n)
+✅ Total Time: O(n) (linear in string length)
+
+Space Complexity
+Array from split → O(n)
+StringBuilder → O(n)
+Output string → O(n)
+✅ Total Space: O(n) (extra space proportional to the input size)
