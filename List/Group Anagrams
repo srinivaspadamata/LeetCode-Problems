@@ -37,3 +37,6 @@ class Solution {
         return new ArrayList<>(wordMap.values());
     }
 }
+
+Time Complexity: O(n⋅klogk)
+Space Complexity: O(nk) n -> HashMap, k -> char array
