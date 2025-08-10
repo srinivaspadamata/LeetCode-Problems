@@ -42,6 +42,11 @@ class Solution {
     }
 }
 
+Time Complexity:
+Cleaning string → O(n)
+Comparing with two pointers → O(n)
+Total: O(n)
+Space Complexity: O(n) (because of the cleaned string).
 
 Brute Force:
 
