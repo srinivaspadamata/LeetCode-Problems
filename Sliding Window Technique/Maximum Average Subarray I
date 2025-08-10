@@ -39,3 +39,6 @@ class Solution {
         return (double)maxSum/k;
     }
 }
+
+Time Complexity: O(k)+O(n−k)=O(n)
+Space Complexity: O(1)
