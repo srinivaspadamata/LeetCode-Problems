@@ -55,3 +55,6 @@ class Solution {
         return str.toString();
     }
 }
+
+Time Complexity: O(n + m), for loop O(n) and for converting the StringBuilder to a String is O(k)
+Space Complexity: O(n + m) (due to StringBuilder + output string)
