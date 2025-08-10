@@ -35,3 +35,6 @@ class Solution {
         while(count2-- > 0) nums[index++] = 2;
     }
 }
+
+Time Complexity: O(n)
+Space Complexity: O(1)
