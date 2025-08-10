@@ -57,6 +57,9 @@ class Solution {
     }
 }
 
+Time Complexity: O(n) — single pass through the array.
+Space Complexity: O(1) — in-place compression.
+
 If there is no need to change the input Array
 
 import java.util.*;
@@ -81,3 +84,5 @@ public class Main
 	}
 }
 
+Time Complexity: O(n)
+Space Complexity: O(n)
