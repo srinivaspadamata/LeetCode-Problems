@@ -1,0 +1,89 @@
+Given two integers n and k, return an array of all the integers of length n where the difference between every two consecutive digits is k. 
+You may return the answer in any order.
+
+Note that the integers should not have leading zeros. Integers as 02 and 043 are not allowed.
+
+Example 1:
+Input: n = 3, k = 7
+Output: [181,292,707,818,929]
+Explanation: Note that 070 is not a valid number, because it has leading zeroes.
+
+Example 2:
+Input: n = 2, k = 1
+Output: [10,12,21,23,32,34,43,45,54,56,65,67,76,78,87,89,98]
+
+Constraints:
+2 <= n <= 9
+0 <= k <= 9
+
+Code: Java
+
+Using DFS:
+
+class Solution {
+    public int[] numsSameConsecDiff(int n, int k) {
+        List<Integer> res = new ArrayList<>();
+
+        for(int num=1; num<=9; num++){
+            dfs(num, n-1, k, res);
+        }
+
+        int[] resArray = new int[res.size()];
+        for(int i=0; i<res.size(); i++){
+            resArray[i] = res.get(i);
+        }
+        return resArray;
+    }
+
+    private void dfs(int num, int remSize, int k, List<Integer> res){
+        if(remSize == 0){
+            res.add(num);
+            return;
+        }
+        int lastDigit = num % 10;
+        if(lastDigit + k <= 9) dfs(num*10 + lastDigit + k, remSize-1, k, res);
+        if(k != 0 && lastDigit - k >= 0) dfs(num*10 + lastDigit - k, remSize-1, k, res);
+    }
+}
+
+Time Complexity: 𝑂(2^𝑛), Number of possible calls in worst case: 9×2^(𝑛−1)
+Space Complexity: 𝑂(2^𝑛), Number of integers generated in worst case: 9×2^(𝑛−1) (including output storage; auxiliary recursion stack = O(n)).
+
+Using BFS:
+
+class Solution {
+    public int[] numsSameConsecDiff(int n, int k) {
+        List<Integer> res = new ArrayList<>();
+
+        Queue<Integer> queue = new LinkedList<>();
+        for(int num=1; num<=9; num++){
+            queue.add(num);
+        }
+
+        int len = 1;
+        while(!queue.isEmpty() && len < n){
+            len++;
+            int size = queue.size();
+            for(int i=0; i<size; i++){
+                int currNum = queue.remove();
+                int lastDigit = currNum % 10;
+                if(lastDigit + k <= 9) queue.add(currNum*10 + lastDigit + k);
+                if(k != 0 && lastDigit - k >= 0) queue.add(currNum*10 + lastDigit - k);
+            }
+        }
+
+        while(!queue.isEmpty()){
+            res.add(queue.remove());
+        }
+
+        int[] resArray = new int[res.size()];
+        for(int i=0; i<res.size(); i++){
+            resArray[i] = res.get(i);
+        }
+        return resArray;
+    }
+}
+
+Time Complexity: 𝑂(2^𝑛), Number of possible calls in worst case: 9×2^(𝑛−1)
+Space Complexity: 𝑂(2^𝑛), At most 9×2^(𝑛−1) numbers can be stored in memory at the deepest BFS layer 
+(including output storage; auxiliary recursion stack = O(n)).
