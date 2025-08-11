@@ -32,7 +32,7 @@ Code: Java
 
 class Solution {
     public boolean validPath(int n, int[][] edges, int source, int destination) {
-        Map<Integer, List<Integer>> graph = new HashMap<>();
+        Map<Integer, List<Integer>> graph = new HashMap<>();    //Using Adjacency List
 
         for(int[] edge: edges){
             int v1 = edge[0], v2 = edge[1];
