@@ -36,6 +36,9 @@ class Solution {
     }
 }
 
+Time Complexity: O(n * k)
+Space Complexity: O(1)
+
 Optimized Technique O(N logN + M): N logN for sorting, M is the length of the shortest string
 
 If a character at position i matches in both the first and last strings, 
@@ -54,3 +57,6 @@ class Solution {
         return first.substring(0, i);
     }
 }
+
+Time Complexity: O(n log n * k)
+Space Complexity: O(n)
