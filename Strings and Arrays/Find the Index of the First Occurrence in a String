@@ -30,6 +30,9 @@ class Solution {
     }
 }
 
+Time Complexity: O(n * m), where n is the length of the string, m is the length of the substring
+Space Complexity: O(m)
+
 Optimized Code (Using Sliding Window):
 
 public class Solution {
@@ -48,3 +51,5 @@ public class Solution {
     }
 }
 
+Time Complexity: O(n * m) (worst case)
+Space Complexity: O(1)
