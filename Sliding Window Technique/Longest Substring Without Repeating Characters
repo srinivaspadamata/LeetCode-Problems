@@ -44,5 +44,5 @@ class Solution {
     }
 }
 
-Time Complexity - O(n)
-Space Complexity - O(n)
+Time Complexity - O(n), Each character is visited once by right, Each character is removed at most once by left
+Space Complexity - O(k), where k is the character set size
