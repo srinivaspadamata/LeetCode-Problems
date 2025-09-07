@@ -56,3 +56,5 @@ class Solution {
     }
 }
 
+Time Complexity: O(n + L), n for parsing the input, L for building the final decoded string (including repetitions).
+Space Complexity: O(L + d), L = final decoded string length, d = maximum depth of nested brackets.
