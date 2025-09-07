@@ -52,3 +52,5 @@ class Solution {
     }
 }
 
+Time Complexity: O(n)
+Space Complexity: O(n), Worst case: all asteroids survive and get pushed onto the stack.
