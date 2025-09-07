@@ -35,6 +35,9 @@ class Solution {
     }
 }
 
+Time Complexity = O(n)
+Space Complexity = O(n) including output, O(1) auxiliary.
+
 Brute Force:
 
 import java.util.Arrays;
@@ -63,5 +66,6 @@ public class ProductExceptSelfBruteForce {
     }
 }
 
-
+Time Complexity = O(n²)
+Space Complexity = O(n), due to result[] array
 
