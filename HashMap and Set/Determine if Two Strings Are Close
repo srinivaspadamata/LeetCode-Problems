@@ -60,3 +60,10 @@ class Solution {
     }
 }
 
+Time Complexity: O(n + m + k log k) → simplified to O(n + m) for fixed alphabet size.
+Build maps: O(n + m)
+Compare key sets: O(k)
+Sorting: O(k log k)
+Compare lists: O(k)
+
+Space Complexity: O(k) → effectively O(1) for 26 letters.
