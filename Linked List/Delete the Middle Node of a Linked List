@@ -59,3 +59,5 @@ class Solution {
     }
 }
 
+Time Complexity: O(n), Each node is visited once.
+Space Complexity: O(1)
