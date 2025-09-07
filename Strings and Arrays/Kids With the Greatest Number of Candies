@@ -49,3 +49,6 @@ class Solution {
         return maxCandies;
     }
 }
+
+Time Complexity: O(n)
+Space Complexity: O(n) (for the output list)
