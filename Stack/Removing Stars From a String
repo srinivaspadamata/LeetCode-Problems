@@ -52,6 +52,9 @@ class Solution {
     }
 }
 
+Time Complexity: O(n)
+Space Complexity: O(n), In the worst case, all characters are stored in the stack
+
 Brute Force Code:
 
 public static String removeStars(String s) {
@@ -72,4 +75,5 @@ public static String removeStars(String s) {
     return result.toString();
 }
 
-
+Time Complexity: O(n)
+Space Complexity: O(n), better than stack version which used O(2n)
