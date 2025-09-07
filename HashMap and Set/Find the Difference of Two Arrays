@@ -46,6 +46,9 @@ class Solution {
     }
 }
 
+Time Complexity: O(n + m), n = nums1.length, m = nums2.length
+Space Complexity: O(n + m)
+
 Brute Force:
 
 import java.util.ArrayList;
