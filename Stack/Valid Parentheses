@@ -50,3 +50,6 @@ class Solution {
         return stack.isEmpty();
     }
 }
+
+Time Complexity: O(n)
+Space Complexity: O(n), In the worst case (e.g., "((((("), all characters go into the stack.
