@@ -42,6 +42,9 @@ class Solution {
     }
 }
 
+Time Complexity: O(n)
+Space Complexity: O(n), HashMap numIndex stores at most n elements.
+
 Brute Force:
 
 class Solution {
