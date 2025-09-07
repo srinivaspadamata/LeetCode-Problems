@@ -52,3 +52,6 @@ class Solution {
         return temp.next;
     }
 }
+
+Time Complexity: O(m + n), where m and n are lengths of the two lists — we process each node once.
+Space Complexity: O(1)
