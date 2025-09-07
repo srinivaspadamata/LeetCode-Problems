@@ -53,6 +53,9 @@ class Solution {
     }
 }
 
+Time Complexity = O(n)
+Space Complexity = O(1)
+
 Using HashMap:
 
 class Solution {
@@ -71,4 +74,5 @@ class Solution {
     }
 }
 
-
+Time Complexity = O(n)
+Space Complexity = O(k) ≤ O(n)
