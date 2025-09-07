@@ -37,3 +37,6 @@ class Solution {
         return str.substring(left + 1, right);
     }
 }
+
+Time Complexity: O(n²)
+Space Complexity: O(1) auxiliary + O(n) output
