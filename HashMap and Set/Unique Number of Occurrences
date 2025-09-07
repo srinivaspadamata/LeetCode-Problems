@@ -34,7 +34,7 @@ class Solution {
         //}
         for (int freq : countMap.values()) {
             // If frequency already exists, return false
-            if (!uniqueFrequencies.add(freq)) {
+            if (!countSet.add(freq)) {
                 return false;
             }
         }
@@ -42,3 +42,5 @@ class Solution {
     }
 }
 
+Time Complexity: O(n)
+Space Complexity: O(n)
