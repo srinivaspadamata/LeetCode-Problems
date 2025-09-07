@@ -35,7 +35,7 @@ class Solution {
     }
 }
 
-Time Complexity = O(n) average case
+Time Complexity = O(n)
 Space Complexity = O(1)
 
 Using HashMap:
