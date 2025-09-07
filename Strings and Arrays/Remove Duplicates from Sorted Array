@@ -54,6 +54,9 @@ class Solution {
     }
 }
 
+Time Complexity = O(n)
+Space Complexity = O(1)
+
 Using LinkedHashSet:
 
 class Solution {
@@ -72,3 +75,5 @@ class Solution {
     }
 }
 
+Time Complexity = O(n)
+Space Complexity = O(n), stores all unique elements → O(k) ≤ O(n)
