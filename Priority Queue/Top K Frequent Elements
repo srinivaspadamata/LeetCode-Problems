@@ -43,4 +43,12 @@ class Solution {
     }
 }
 
+Time Complexity: O(n + u log k)
+Heap operations →
+Each add and poll costs O(log k).
+There are u unique numbers.
+So cost = O(u log k)
 
+Space Complexity: O(u + k)
+numMap: upto u unique numbers → O(u).
+Min-heap: stores at most k elements → O(k).
