@@ -76,4 +76,12 @@ class Solution {
 }
 
 Time Complexity: O(n + u log u)
+Heap construction:
+Inserting u unique words → O(u log u), since heapify with addAll is O(u).
+Extracting top K: O(k log u).
+Total = O(n + u log u + k log u)
+
 Space Complexity: O(u + k)
+HashMap stores up to u unique words → O(u).
+Heap stores up to u entries → O(u).
+Result list stores k words → O(k).
