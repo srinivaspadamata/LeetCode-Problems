@@ -42,3 +42,6 @@ class Solution {
         return (left.val == right.val) && (isSymmetricOrNot(left.left, right.right)) && (isSymmetricOrNot(left.right, right.left));
     }
 }
+
+Time Complexity: O(n)
+Space Complexity: O(h), where h is the height of the tree, O(n) in worst case, O(log n) for balanced tree
