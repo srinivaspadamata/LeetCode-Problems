@@ -57,4 +57,4 @@ class Solution {
 }
 
 Time Complexity: O(n), Each node in the binary tree is visited exactly once.
-Space Complexity: O(n)
+Space Complexity: O(n), In the worst case, the queue can hold the maximum number of nodes at a level.
