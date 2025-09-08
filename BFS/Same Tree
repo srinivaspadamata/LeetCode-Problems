@@ -21,6 +21,9 @@ Code: Java
 
 Using BFS:
 
+Time Complexity: O(n), Every node in both trees is visited once.
+Space Complexity: O(n), In the worst case, the queue can hold nodes from the largest level of the trees (like BFS).
+
 /**
  * Definition for a binary tree node.
  * public class TreeNode {
@@ -58,6 +61,9 @@ class Solution {
 }
 
 Using DFS:
+
+Time Complexity: O(n), Every node in both trees is visited once.
+Space Complexity: O(h), where h = tree height.
 
 /**
  * Definition for a binary tree node.
