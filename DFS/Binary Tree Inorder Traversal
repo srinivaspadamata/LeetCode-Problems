@@ -54,3 +54,5 @@ class Solution {
     }
 }
 
+Time Complexity: O(n)
+Space Complexity: O(n + h) → O(n) worst case, O(n) for result list, O(h) for recursion.
