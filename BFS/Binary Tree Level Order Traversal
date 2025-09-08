@@ -55,3 +55,6 @@ class Solution {
         return result;
     }
 }
+
+Time Complexity: O(n), Each node in the binary tree is visited exactly once.
+Space Complexity: O(n)
