@@ -3,9 +3,8 @@ Return the number of good nodes in the binary tree.
 
 Example 1:
 
-![alt text](GoodNode.png)
+![good node 1](Images/GoodNode.png)
 
-```
 Input: root = [3,1,4,3,null,1,5]
 Output: 4
 Explanation: Nodes in blue are good.
@@ -13,10 +12,10 @@ Root Node (3) is always a good node.
 Node 4 -> (3,4) is the maximum value in the path starting from the root.
 Node 5 -> (3,4,5) is the maximum value in the path
 Node 3 -> (3,1,3) is the maximum value in the path.
-```
 
 Example 2:
 
+![good node 2](Images/GoodNode1.png)
 Input: root = [3,3,null,4,2]
 Output: 3
 Explanation: Node 2 -> (3, 3, 2) is not good, because "3" is higher than it.
@@ -32,6 +31,7 @@ Each node's value is between [-10^4, 10^4].
 
 Code: Java
 
+```
 /**
  * Definition for a binary tree node.
  * public class TreeNode {
@@ -65,7 +65,6 @@ class Solution {
         return count;
     }
 }
-
+```
 Time Complexity: O(n), n = number of nodes
 Space Complexity: O(H), h = tree height
-```
