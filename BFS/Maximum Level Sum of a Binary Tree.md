@@ -2,7 +2,7 @@ Given the root of a binary tree, the level of its root is 1, the level of its ch
 Return the smallest level x such that the sum of all the values of nodes at level x is maximal.  
   
 Example 1:  
-![max level sum](maxlevelsum.jfif)  
+![max level sum](Images/maxlevelsum.jfif)  
 Input: root = [1,7,0,7,-8,null,null]  
 Output: 2  
 Explanation:  
