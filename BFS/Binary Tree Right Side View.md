@@ -10,6 +10,7 @@ Explanation:
 
 ![right view 1](Images/rightview1.png)
 
+
 Example 2:
 
 Input: root = [1,2,3,4,null,null,null,5]
@@ -20,12 +21,18 @@ Explanation:
 
 ![right view 2](Images/rightview2.png)
 
+
 Example 3:
+
 Input: root = [1,null,3]
+
 Output: [1,3]
 
+
 Example 4:
+
 Input: root = []
+
 Output: []
 
 Constraints:
