@@ -32,5 +32,5 @@ class Solution {
     }
 }
 
-Time Complexity: O(log n)
+Time Complexity: O(log n), binary search halves the range for each iteration.
 Space Complexity: O(1)
