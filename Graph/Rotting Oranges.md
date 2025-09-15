@@ -7,7 +7,7 @@ Every minute, any fresh orange that is 4-directionally adjacent to a rotten oran
 Return the minimum number of minutes that must elapse until no cell has a fresh orange. If this is impossible, return -1.  
   
 Example 1:  
-![rotting oranges](Images/rottingoranges.png)  
+![rotting oranges](Images/rottenoranges.png)  
 Input: grid = [[2,1,1],[1,1,0],[0,1,1]]  
 Output: 4  
   
