@@ -1,12 +1,12 @@
 Given an array of points where points[i] = [xi, yi] represents a point on the X-Y plane, return the maximum number of points that lie on the same straight line.  
   
 Example 1:  
-
+![max points 1](Images/maxpoints1.jpg)  
 Input: points = [[1,1],[2,2],[3,3]]  
 Output: 3  
 
 Example 2:  
-
+![max points 2](Images/maxpoints2.jpg)  
 Input: points = [[1,1],[3,2],[5,3],[4,1],[2,3],[1,4]]  
 Output: 4  
   
