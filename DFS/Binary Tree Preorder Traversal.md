@@ -63,7 +63,7 @@ class Solution {
 }
 ```
   
-**Iterative Code:**  
+**Iterative Code:** No recursion, stack-based  
 Time Complexity: O(n)  
 Space Compelxity: O(h)  
 ```
