@@ -29,7 +29,7 @@ nums is an ascending array that is possibly rotated.
 Code: Java  
   
 Time Complexity: O(log n)  
-Space Compelxity: O(n)  
+Space Compelxity: O(1)  
   
 ```
 class Solution {
