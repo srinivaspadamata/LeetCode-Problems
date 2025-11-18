@@ -20,10 +20,10 @@ preorder is guaranteed to be the preorder traversal of the tree.
 inorder is guaranteed to be the inorder traversal of the tree.  
 
 Code: Java  
-
-Time Complexity: O(n)
-Space Complexity: O(n), since hashmap stores all inorder nodes
-
+  
+Time Complexity: O(n)  
+Space Complexity: O(n), since hashmap stores all inorder nodes  
+  
 ```
 /**
  * Definition for a binary tree node.
