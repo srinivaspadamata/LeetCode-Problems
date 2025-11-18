@@ -3,7 +3,7 @@ The "linked list" should use the same TreeNode class where the right child point
 The "linked list" should be in the same order as a pre-order traversal of the binary tree.  
   
 Example 1:  
-![Flatten Tree](/Images/flaten.jpg)
+![Flatten Tree](Images/flaten.jpg)
 Input: root = [1,2,5,3,4,null,6]  
 Output: [1,null,2,null,3,null,4,null,5,null,6]  
   
