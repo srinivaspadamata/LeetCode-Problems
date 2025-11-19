@@ -8,7 +8,7 @@ A Sudoku board (partially filled) could be valid but is not necessarily solvable
 Only the filled cells need to be validated according to the mentioned rules.  
   
 Example 1:  
-![Valid Sudoku](Images/sudoku.jpg)  
+![Valid Sudoku](Images/sudoku.webp)  
 Input: board =   
 [["5","3",".",".","7",".",".",".","."]  
 ,["6",".",".","1","9","5",".",".","."]  
