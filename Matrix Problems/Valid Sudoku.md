@@ -75,12 +75,15 @@ Time Complexity: O(1), Sudoku grid size is always fixed (9×9). The number of op
 Space Complexity: O(1), Uses fixed-size 27 integers (rows, cols, boxes)  
   
 Explanation:  
-mask = 1 << (d - 1)   ->   Left shift the bit by (d-1), if digit = 5   ->   mask = 1 << (5-1) = 1 << 4   ->   mask = 00010000 (binary)  
-                      ->   if digit = 7   ->   mask = 1 << (7-1) = 1 << 6 = 64    ->    mask = 01000000  
+mask = 1 << (d - 1)   
+->   Left shift the bit by (d-1), if digit = 5   ->   mask = 1 << (5-1) = 1 << 4   ->   mask = 00010000 (binary)  
+->   if digit = 7   ->   mask = 1 << (7-1) = 1 << 6 = 64    ->    mask = 01000000  
+  
 (rows[r] & mask) != 0   ->  rows[r] = 000010000  &&  mask = 01000000  =  000000000 (zero!)  
   
 rows[r] |= mask;   ->  00010100 (previous)  ||  01000000 (digit 7)  =  01010100  
 (r/3)*3 + (c/3)  ->  Position (4,8)  ->   r = 4 → r/3 = 1, c = 8 → c/3 = 2  ->  boxIndex = 1*3 + 2 = 5  
+  
 Box Indexing:  
 0 1 2  
 3 4 5  
