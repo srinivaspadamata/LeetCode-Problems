@@ -104,7 +104,7 @@ public class CycleDetectionBFS {
 Time Complexity: O(V + E), Adjacency List takes O(V + E)
 Space Complexity: O(V + E), Adjacency List Stores all vertices and edges → O(V + E)
 
-Example 2:
+Example 2: Character Graph
 
    a
   / \
@@ -160,3 +160,60 @@ public class CycleDetectionOptimized {
 
 Time Complexity: O(V + E)
 Space Complexity: O(V + E), Stores each edge twice (u→v and v→u), Space = O(V + E)
+
+Integer Graph:
+
+import java.util.*;
+public class UndirectedIntCycle {
+
+    static class Graph {
+        int V;
+        List<List<Integer>> adj;
+
+        Graph(int V) {
+            this.V = V;
+            adj = new ArrayList<>();
+            for (int i = 0; i < V; i++) adj.add(new ArrayList<>());
+        }
+
+        void addEdge(int u, int v) {
+            adj.get(u).add(v);
+            adj.get(v).add(u);
+        }
+
+        boolean hasCycle() {
+            boolean[] visited = new boolean[V];
+
+            for (int i = 0; i < V; i++) {
+                if (!visited[i]) {
+                    if (dfs(i, -1, visited)) return true;
+                }
+            }
+            return false;
+        }
+
+        boolean dfs(int node, int parent, boolean[] visited) {
+            visited[node] = true;
+
+            for (int nbr : adj.get(node)) {
+                if (!visited[nbr]) {
+                    if (dfs(nbr, node, visited)) return true;
+                } else if (nbr != parent) {
+                    return true;
+                }
+            }
+            return false;
+        }
+    }
+
+    public static void main(String[] args) {
+        Graph g = new Graph(5);
+
+        g.addEdge(0, 1);
+        g.addEdge(1, 2);
+        g.addEdge(2, 0); // cycle
+
+        System.out.println("Cycle present? " + g.hasCycle());
+    }
+}
+
