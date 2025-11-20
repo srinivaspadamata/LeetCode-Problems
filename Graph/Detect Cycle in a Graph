@@ -104,7 +104,7 @@ public class CycleDetectionBFS {
 Time Complexity: O(V + E), Adjacency List takes O(V + E)
 Space Complexity: O(V + E), Adjacency List Stores all vertices and edges → O(V + E)
 
-Example 2: Character Graph
+Example 2: Character Graph using DFS
 
    a
   / \
@@ -161,7 +161,7 @@ public class CycleDetectionOptimized {
 Time Complexity: O(V + E)
 Space Complexity: O(V + E), Stores each edge twice (u→v and v→u), Space = O(V + E)
 
-Integer Graph:
+Integer Graph using DFS:
 
 import java.util.*;
 public class UndirectedIntCycle {
